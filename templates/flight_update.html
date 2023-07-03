@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block styles %}
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+{% endblock styles %}
+
+{% load static %}
+
+{% block content %}
+  <h1>Update Flight</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update</button>
+  </form>
+{% endblock %}

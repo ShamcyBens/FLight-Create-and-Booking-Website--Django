@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    {{ block.super }}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+{% endblock styles %}
+
+{% block content %}
+  <div class="container" style="display: flex; justify-content: center; align-items: center; min-height: 80vh;">
+    <div class="login-box" style="max-width: 800px; padding: 40px;">
+      <h2>Login</h2>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" style="padding: 10px 20px; border-radius: 5px; background-color: #007bff; color: #fff; border: none; cursor: pointer;">
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block styles %}
+    {{ block.super }}
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link href="{% static 'css/home.css' %}" rel="stylesheet" type="text/css">
+    <style>
+
+      background-image: url('https://media.istockphoto.com/id/155439315/photo/passenger-airplane-flying-above-clouds-during-sunset.jpg?s=612x612&w=0&k=20&c=LJWadbs3B-jSGJBVy9s0f8gZMHi2NvWFXa3VJ2lFcL0=');
+      background-size: cover;
+      
+    </style>
+{% endblock styles %}
+
+
+{% block content %}
+  <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div style="background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px; text-align: center;">
+      <h2 style="color: #333; font-size: 24px; margin-bottom: 20px;">Register</h2>
+      <form method="POST" action="{% url 'register' %}" style="margin-bottom: 20px;">
+        {% csrf_token %}
+        <div style="margin-bottom: 10px;">
+          <label for="id_username" style="display: block; font-weight: bold;">Username:</label>
+          {{ form.username }}
+        </div>
+        <div style="margin-bottom: 10px;">
+          <label for="id_password1" style="display: block; font-weight: bold;">Password:</label>
+          {{ form.password1 }}
+        </div>
+        <div style="margin-bottom: 10px;">
+          <label for="id_password2" style="display: block; font-weight: bold;">Password confirmation:</label>
+          {{ form.password2 }}
+        </div>
+        <button type="submit" style="background-color: #007bff; color: #fff; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer;">Register</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,107 @@
+{% load static %}
+
+{% block styles %}
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+{% endblock styles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aircraft Website</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+   <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+   <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+
+    <link rel="shortcut icon" href="{% static 'favicon/favicon.png' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <!-- Add more links here -->
+            </ul>
+        </nav>
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5AxtB_S5AglLOQdledwdHt9HXYoUChnH8wQ&usqp=CAU" alt="Logo" height="50" width="50">
+        </div>
+    </header>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+
+        body {
+            background-image: url('https://media.istockphoto.com/id/155439315/photo/passenger-airplane-flying-above-clouds-during-sunset.jpg?s=612x612&w=0&k=20&c=LJWadbs3B-jSGJBVy9s0f8gZMHi2NvWFXa3VJ2lFcL0=');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f2f2f2;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }           
+                    
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 10px 20px;
+        }
+
+        nav ul li a:hover {
+            background-color: #ddd;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            text-align: center;
+        }           
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: green;
+        }
+
+        p {
+            font-size: 18px;
+        }           
+
+    </style>
+    <main>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer>
+        <!-- Add footer content if needed -->
+    </footer>
+</body>
+</html>

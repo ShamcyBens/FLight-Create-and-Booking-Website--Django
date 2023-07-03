@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+{% endblock styles %}
+
+{% block content %}
+  <div class="container py-5">
+    <h1 class="display-4 text-center mb-4">Flight Detail</h1>
+    <div class="flight-info">
+      <p class="mb-4"><strong>Flight Number:</strong> {{ flight.flight_number }}</p>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <p><strong>Departure City:</strong> {{ flight.departure_city }}</p>
+          <p><strong>Destination City:</strong> {{ flight.arrival_city }}</p>
+          <p><strong>Departure Date:</strong> {{ flight.departure_date }}</p>
+          <p><strong>Arrival Date:</strong> {{ flight.arrival_date }}</p>
+        </div>
+        <div class="col-md-6">
+          <p><strong>Flight Pricing:</strong> {{ flight.price }}</p>
+          <p><strong>Seats Available:</strong> {{ flight.seats_available }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block styles %}
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+{% endblock styles %}
+
+{% block content %}
+  <div class="container py-5">
+    <h1 class="display-4 text-center mb-4">Flight List</h1>
+    <div class="row">
+      {% for flight in flights %}
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">{{ flight.flight_number }}</h4>
+              <p class="card-text">
+                Departure: {{ flight.departure_city }} <br>
+                
+                Destination: {{ flight.arrival_city }} <br>
+                Departure Time: {{ flight.departure_time }} <br>
+                Arrival Time: {{ flight.arrival_time }}
+              </p>
+              <a href="{% url 'flight-detail' flight.id %}" class="btn btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+      {% empty %}
+        <div class="col">
+          <p class="text-center">No flights available.</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

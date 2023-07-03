@@ -1,0 +1,57 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fpurple-future-background&psig=AOvVaw2d1VYkkKmskU74ens-zbal&ust=1687857318862000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCJDsvdXM4P8CFQAAAAAdAAAAABAJ');
+}
+
+header {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #ddd;
+}
+
+.logo {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 8px;
+  object-fit: contain;
+}
+
+main {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+}
